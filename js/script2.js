@@ -22,27 +22,15 @@ function initMap() {
       var marker = new google.maps.Marker({position: pos, map: map});
       
       function listRestaurant() {
-        var loc = pos.lat.toString() + ',' + pos.lng.toString()
-        console.log(loc)
-        const instance = axios.create({
-          baseURL: 'https://maps.googleapis.com/maps/api/place',
-          timeout: 1000
-          //headers: {'Access-Control-Allow-Origins': '*'}
-        });
-        instance.get('/nearbysearch/json', {
-          params: {
-            key: 'AIzaSyBIUMmeHtvXaxgLj-S6S9B9oMh5V7qxVfA',
-            location: loc,
-            type: "restaurant",
-            radius : 3000
-          }
-        })
-        .then(function (response) {
-          console.log(response);
-        })
-        .catch(function (error) {
-          console.log(error);
-        })
+        console.log("hello")
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyBIUMmeHtvXaxgLj-S6S9B9oMh5V7qxVfA&location=-33.8670522,151.1957362&radius=1500&type=restaurant');
+        xhr.addEventListener('readystatechange', function() {
+          if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            console.log("Coucou")
+        }
+      });
+      xhr.send(null);
       }
       listRestaurant();
 
