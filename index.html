@@ -36,15 +36,34 @@
 
     </header>
 
-    <div class="container-fluid d-flex flex-row p-0">
+    <div class="container-fluid map-overlay d-flex flex-row p-0">
         <div class="border col-md-9 bloc" id="map"></div>
-        <div class="border col-md-3 bloc" id="detail"></div>
+        <div class="border info-wrapper col-md-3 bloc" id="detail">
+            <div class="info-wrapper col-md-3 ">
+                <div id="options" class="sort">
+                    <label for="sort">Sort By Rating</label>
+                    <select name="sort" id="sort">
+                        <option value="all">All</option>
+                        <option value="one">1</option>
+                        <option value="two">2</option>
+                        <option value="three">3</option>
+                        <option value="four">4</option>
+                        <option value="five">5</option>
+                    </select>
+                </div>
+                <div id="result-list">
+                    <div id="results"></div>
+                    <button id="more">More results</button>
+                </div>
+            </div>
+        </div>
     </div>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIUMmeHtvXaxgLj-S6S9B9oMh5V7qxVfA&callback=initMap&libraries=places"
     >
     </script>
     <script src="./js/script.js"></script>
+    
 </body>
 
 </html>
