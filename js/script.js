@@ -70,12 +70,12 @@ function initMap() {
             let marker = new google.maps.Marker({
                 position: currentPosition,
                 icon: {
-                    path: google.maps.SymbolPath.BACKWARD_OPEN_ARROW,
-                    fillColor: 'red',
+                    path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
+                    fillColor: 'blue',
                     fillOpacity: 0.3,
                     scale: 10,
-                    strokeColor: 'red',
-                    strokeWeight: 1,
+                    strokeColor: 'green',
+                    strokeWeight: 2,
                     zIndex: 1
                 },
             });
@@ -104,8 +104,8 @@ function initMap() {
             service.nearbySearch(request, callback);
 
             function callback(results, status) {
-                const script = document.createElement('script');
-                script.src = 'js/places.js';
+                /*const script = document.createElement('script');
+                script.src = 'js/places.js';*/
                 document.getElementsByTagName('head')[0].appendChild(script);
                 window.eqfeed_callback = function(results) {
                     results = results.results;
