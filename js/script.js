@@ -104,8 +104,8 @@ function initMap() {
             service.nearbySearch(request, callback);
 
             function callback(results, status) {
-                /*const script = document.createElement('script');
-                script.src = 'js/places.js';*/
+                const script = document.createElement('script');
+                script.src = 'js/places.js';
                 document.getElementsByTagName('head')[0].appendChild(script);
                 window.eqfeed_callback = function(results) {
                     results = results.results;
